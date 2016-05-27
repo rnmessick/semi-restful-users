@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>semi_restful_users</title>
+</head>
+<body>
+	{{ users }}
+	<h1>Users</h1>
+	{% for user in users: %}
+	<table>
+    	<thead>
+	        <tr>
+	        	<th>id</th>
+	            <th>Name</th>
+	            <th>Email</th>
+	            <th>Created At</th>
+	            <th>Actions</th>
+	        </tr>
+    	</thead>
+		<tbody>
+	        <tr>
+	        	<td>{{user['id']}}</td>
+	            <td><a href="">{{user['name']}}</a></td>
+	            <td>{{ user['email']}}</td>
+	            <td>{{user['created_at']}}</td>
+	            <td><a href="">Show</a> <a href="">Edit</a>
+	            <a href="/users/{{user['id']}}/delete">Delete</a></td>
+
+        	</tr>
+
+	</table>
+	{% endfor %}
+
+	<a href="/users/new">Add a new user</a>
+		<h1>Add a new user</h1>
+	<form action="/users/new" method="POST">
+		<label for="first_name">First Name:<input type="text" name="first_name" id="first_name"></label>
+		<label for="last_name">Last Name:<input type="text" name="last_name" id="last_name"></label>
+		<label for="email">Email:<input type="text" name="email" id="email"></label>
+		<input type="submit" value="Create">
+		
+	</form>
+	<a href="/users">Go Back</a>
+</body>
+</html>

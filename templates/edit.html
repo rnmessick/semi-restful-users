@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Show/Edit/Delete Template</title>
+</head>
+<body>
+<h1>User {{user['id']}}</h1>
+<h3>Full Name: {{user['name']}}</h1>
+<h3>Email: {{ user['email']}}</h2>
+<h3>Created at: {{user['created_at']}}</h3>
+<a href="/users/{{user['id']}}">Edit</a> <a href="/users/{{user['id']/delete">Delete</a>
+
+
+<h1>Update user:</h1>
+<form action="/users/{{user['id']}}" method='post'>
+  First Name: <input type="text" name="first_name" >
+  Last Name: <input type="text" name="last_name">
+  Email: <input type="text" name="email">
+  <input type="submit" value="Update">
+</form>
+<a href="">Show</a> 	<a href="">Go Back</a>
+
+</body>
+</html>
