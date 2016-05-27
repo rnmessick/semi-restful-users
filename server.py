@@ -11,7 +11,7 @@ def index():
 	users = mysql.query_db(query) # run the query with the query_db method
 	return render_template('index.html', users=users) # pass the data to our template
 
-@app.route("/users/new", methods=["GET"])
+@app.route("/users/new", methods=["POST", "GET"])
 def new():
 # write our query as a string, notice how we have multiple values we want to
 # insert into our query
