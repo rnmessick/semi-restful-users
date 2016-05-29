@@ -4,21 +4,22 @@
 	<title>Show/Edit/Delete Template</title>
 </head>
 <body>
+{% for user in users %}
 <h1>User {{user['id']}}</h1>
 <h3>Full Name: {{user['name']}}</h1>
 <h3>Email: {{ user['email']}}</h2>
 <h3>Created at: {{user['created_at']}}</h3>
-<a href="/users/{{user['id']}}">Edit</a> <a href="/users/{{user['id']/destroy">Delete</a>
+<a href="/users/{{user['id']}}">Edit</a> <a href="/users/{{user['id']}}/destroy">Delete</a>
 
 
 <h1>Update user:</h1>
-<form action="/users/{{user['id']}}" method='post'>
+<form action="/users/{{user['id']}}" method='POST'>
   First Name: <input type="text" name="first_name" >
   Last Name: <input type="text" name="last_name">
   Email: <input type="text" name="email">
   <input type="submit" value="Update">
 </form>
-<a href="">Show</a> 	<a href="">Go Back</a>
-
+<a href="/users">Show</a> 	<a href="/users">Go Back</a>
+{% endfor %}
 </body>
 </html>
